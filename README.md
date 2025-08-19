@@ -1,6 +1,6 @@
 # Symfony API Boilerplate
 
-TODO: Intro
+Boilerplate setup to run a Symfony API application. 
 
 ## Getting Started
 
@@ -9,6 +9,13 @@ TODO: Intro
 - [Docker](https://www.docker.com/get-started/)
 - [Symfony CLI](https://symfony.com/doc/current/setup/symfony_cli.html)
 
+### Running locally
+
+Basic setup
+
+```
+symfony serve
+```
 
 ## Licence
 
