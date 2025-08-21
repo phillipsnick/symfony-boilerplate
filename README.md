@@ -17,10 +17,10 @@ Install composer packages
 composer install
 ```
 
-Basic setup
+Run via docker compose
 
 ```bash
-symfony serve
+docker compose up
 ```
 
 ## Licence
