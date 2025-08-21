@@ -1,14 +1,9 @@
 #syntax=docker/dockerfile:1
 
-# TODO: source
+# Source https://github.com/dunglas/symfony-docker/blob/main/Dockerfile
 
 # Versions
-FROM dunglas/frankenphp:1-php8.4 AS frankenphp_upstream
-
-# The different stages of this Dockerfile are meant to be built into separate images
-# https://docs.docker.com/develop/develop-images/multistage-build/#stop-at-a-specific-build-stage
-# https://docs.docker.com/compose/compose-file/#target
-
+FROM dunglas/frankenphp:php8.4 AS frankenphp_upstream
 
 # Base FrankenPHP image
 FROM frankenphp_upstream AS frankenphp_base
@@ -23,7 +18,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	acl \
 	file \
 	gettext \
-	# git \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
@@ -37,9 +31,6 @@ RUN set -eux; \
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
-
-# Transport to use by Mercure (default to Bolt)
-# TODO ENV MERCURE_TRANSPORT_URL=bolt:///data/mercure.db
 
 ENV PHP_INI_SCAN_DIR=":$PHP_INI_DIR/app.conf.d"
 
