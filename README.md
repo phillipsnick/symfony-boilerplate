@@ -11,16 +11,28 @@ Boilerplate setup to run a Symfony API application.
 
 ### Running locally
 
+Install composer packages
+
+```bash
+composer install
+```
+
 Basic setup
 
-```
+```bash
 symfony serve
 ```
 
 ## Licence
 
-TODO: MIT
+MIT License
 
 ## Credits
 
 https://github.com/dunglas/symfony-docker?tab=readme-ov-file
+
+
+
+## TODO
+
+Why no Mercure

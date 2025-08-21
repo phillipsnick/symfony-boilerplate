@@ -1,0 +1,32 @@
+services:
+  php:
+    env_file:
+      - .env
+    container_name: app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: frankenphp_dev
+    #depends_on:
+    #  - boilerplate-database
+    #image: ${IMAGES_PREFIX:-}boilerplate-app
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: ${SERVER_NAME:-localhost}, php:80
+    volumes:
+      - ./bin:/app/bin
+      - ./config:/app/config #:cached
+      - ./public:/app/public
+      - ./src:/app/src
+      - ./templates:/app/templates
+      - ./vendor:/app/vendor
+      - ./.env:/app/.env
+      - ./composer.json:/app/compooser.json
+      - ./composer.lock:/app/compooser.lock
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  #database_data:
+  caddy_data:
+  caddy_config:
