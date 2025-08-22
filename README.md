@@ -23,6 +23,16 @@ Run via docker compose
 docker compose up
 ```
 
+## Development
+
+Code quality
+
+```bash
+vendor/bin/rector process --dry-run
+vendor/bin/php-cs-fixer fix --dry-run
+vendor/bin/phpstan analyse
+```
+
 ## Licence
 
 MIT License
