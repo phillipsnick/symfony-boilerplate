@@ -33,6 +33,13 @@ vendor/bin/php-cs-fixer fix --dry-run
 vendor/bin/phpstan analyse
 ```
 
+Testing
+
+```bash
+bin/phpunit
+bin/phpunit --filter MainController
+```
+
 ## Licence
 
 MIT License
